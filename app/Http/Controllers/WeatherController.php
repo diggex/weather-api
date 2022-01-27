@@ -57,7 +57,7 @@ class WeatherController extends Controller
 
         $result["data"] = [
             "location" =>  $cityData["location"]["name"],
-            "time" =>  $cityData["location"]["localtime"],
+            "time" =>  date("l h:m A",strtotime($cityData["location"]["localtime"])),
             "temp_c" =>  $cityData["current"]["temp_c"],
             "wind_kph" =>  $cityData["current"]["wind_kph"],
             "weather" =>  $cityData["current"]["condition"]["text"],
